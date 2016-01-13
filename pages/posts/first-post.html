@@ -1,0 +1,14 @@
+title: First post about Webcrafters
+author: Dwight Gunning
+date: 13-01-2016
+
+{% extends "post.html" %}
+{% block body %}
+
+{% load markup %}
+{% filter markdown %}
+
+Kicking it off ...
+
+{% endfilter %}
+{% endblock %}
