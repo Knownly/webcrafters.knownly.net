@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<nav>
+  <span class="prev">
+    {% if prevPost %}
+      <a href='/{{ prevPost.path }}'>
+        &laquo; {{ prevPost.name }}
+      </a>
+    {% else %}
+      First project
+    {% endif %}
+  </span>
+  
+  <span>
+    <a href="/">Home</a>
+  </span>
+
+  <span class="next">
+    {% if nextPost %}
+      <a href='/{{ nextPost.path }}'>
+        {{ nextPost.name }} &raquo;
+      </a>
+    {% else %}
+      Last project
+    {% endif %}
+  </span>
+</nav>
+<article>
+  <header>
+    <h1>{{ name }}</h1>
+    <h5><time pubdate="pubdate">{{ first_attended|date:"F j, Y" }}</time> by <span class="author">{{ creator }}</address></h5>
+    <p>{{ short_descripton }}</p>
+  </header>
+    {{ short_descripton }}
+    {% block body %}{% endblock %}
+</article>
+{% endblock %}

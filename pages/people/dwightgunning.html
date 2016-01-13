@@ -1,0 +1,13 @@
+name: Dwight Gunning
+first_attended: 13-01-2016
+
+{% extends "person.html" %}
+{% block body %}
+
+{% load markup %}
+{% filter markdown %}
+
+Kicking it off ...
+
+{% endfilter %}
+{% endblock %}

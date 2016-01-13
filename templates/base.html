@@ -1,16 +1,40 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
-   "http://www.w3.org/TR/html4/strict.dtd">
-
+<!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Webcrafters</title>
-	
-	<link rel="shortcut icon" href="{% static '/images/favicon.ico' %}">
-	<link rel="stylesheet" href="{% static '/css/master.css' %}" type="text/css" media="screen" charset="utf-8">
-	
-</head>
-<body>
-	{% block content %}{% endblock %}
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="{% static '/images/favicon.ico' %}">
+
+    <title>Webcrafters Meetup</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static '/css/master.css' %}" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="{% url '/' %}">Home</a></li>
+            <li role="presentation"><a href="{% url '/people/' %}">People</a></li>
+            <li role="presentation"><a href="{% url '/projects/' %}">Projects</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted"><a href="{% url '/' %}">Webcrafters</a></h3>
+      </div>
+
+      {% block content %}{% endblock %}
+
+      <footer class="footer">
+        <p>Webcrafters | <a href="https://www.github.com/Knownly/webcrafters.knownly.net">Fork and contribute</a></p>
+      </footer>
+    </div>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  </body>
 </html>
